@@ -2,7 +2,7 @@ import "../ui/hero.css";
 import "../index.css";
 
 import { FaPercentage } from "react-icons/fa"
-import { HiOfficeBuilding} from "react-icons/hi"
+import { HiOfficeBuilding } from "react-icons/hi"
 import { AiOutlineDollar } from "react-icons/ai"
 import PropertyTiles from "./PropertyTiles";
 function Hero() {
@@ -16,7 +16,6 @@ function Hero() {
               A platform to buy, sell or rent any property without any commision
             </p>
             <div className="hero-span">
-
               <span>
                 50k+
                 <p>renters</p>
@@ -46,7 +45,7 @@ function Hero() {
               buying a new home, we make it easy and efficient. The best part?
               you'll save a bunch of money and time with our services
             </p>
-           
+
             <button className="btn secondary-btn">See more</button>
           </div>
         </div>
@@ -59,31 +58,31 @@ function Hero() {
             </p>
             <div className="hero-span">
               <div className="container-sm">
-              <span>
-                <FaPercentage/>
-              </span>
-              <span>
-                7.4%
-              </span>
-              <p>Property return rate</p>
+                <span>
+                  <FaPercentage />
+                </span>
+                <span>
+                  7.4%
+                </span>
+                <p>Property return rate</p>
               </div>
               <div className="container-sm">
-              <span>
-                <HiOfficeBuilding/>
-              </span>
-              <span>
-                456
-              </span>
-              <p>Property sold</p>
+                <span>
+                  <HiOfficeBuilding />
+                </span>
+                <span>
+                  456
+                </span>
+                <p>Property sold</p>
               </div>
               <div className="container-sm">
-              <span>
-                <AiOutlineDollar/>
-              </span>
-              <span>
-                21
-              </span>
-              <p>Daily transactions</p>              
+                <span>
+                  <AiOutlineDollar />
+                </span>
+                <span>
+                  21
+                </span>
+                <p>Daily transactions</p>
               </div>
 
             </div>
@@ -95,16 +94,16 @@ function Hero() {
 
         <div className="container-md">
           <div className="container-flex">
-          <h2>Based on your location</h2>
-          <p>Some of our picked offices near your location</p>
-          <div className="grid--2cols">
-            <PropertyTiles/>
-          </div>
+            <h2>Based on your location</h2>
+            <p>Some of our picked offices near your location</p>
+            <div className="grid--2cols">
+              <PropertyTiles />
+            </div>
           </div>
         </div>
       </div>
 
-      
+
     </>
   );
 }
