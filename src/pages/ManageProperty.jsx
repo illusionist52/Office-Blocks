@@ -1,8 +1,11 @@
-function ManageProperty(){
-  return <div>
-    <h1>
-      MAnage
-    </h1>
-  </div>
+import Nav from "../ui/Nav";
+
+function ManageProperty() {
+  return (
+    <>
+      <Nav />
+      <h1> THIS IS THE MANAGE PROPERTY PAGE </h1>
+    </>
+  )
 }
 export default ManageProperty;

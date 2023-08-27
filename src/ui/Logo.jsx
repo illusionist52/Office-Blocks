@@ -1,8 +1,9 @@
+import { NavLink } from "react-router-dom";
 import "../index.css"
 
-function Logo(){
+function Logo() {
   return (
-    <img src="../../public/Logo.jpeg" alt="Logo" className="logo"/>
+    <NavLink to="/"><img src="../../public/Logo.jpeg" alt="Logo" className="logo" /></NavLink>
   )
 }
 export default Logo;
