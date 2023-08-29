@@ -1,10 +1,12 @@
 import "../ui/hero.css";
 import "../index.css";
-
+import "./propertytiles.css"
 import { FaPercentage } from "react-icons/fa"
 import { HiOfficeBuilding} from "react-icons/hi"
 import { AiOutlineDollar } from "react-icons/ai"
 import PropertyTiles from "./PropertyTiles";
+import Button from "./Button";
+import LinkButton from "./LinkButton";
 function Hero() {
   return (
     <>
@@ -27,7 +29,7 @@ function Hero() {
                 <p>properties</p>
               </span>
             </div>
-            <button className="btn secondary-btn">Browse properties</button>
+            <LinkButton to={"/rent"} style={"btn secondary-btn"}>Browse properties</LinkButton>
           </div>
           <div className="hero-img">
             <img src="../../public/office-1.jpg" />
@@ -47,7 +49,7 @@ function Hero() {
               you'll save a bunch of money and time with our services
             </p>
            
-            <button className="btn secondary-btn">See more</button>
+            <LinkButton to={"/login"} style={"btn secondary-btn"}>See more</LinkButton>
           </div>
         </div>
 
@@ -98,6 +100,8 @@ function Hero() {
           <h2>Based on your location</h2>
           <p>Some of our picked offices near your location</p>
           <div className="grid--2cols">
+            <PropertyTiles/>
+            <PropertyTiles/>
             <PropertyTiles/>
           </div>
           </div>

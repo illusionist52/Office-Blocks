@@ -1,0 +1,125 @@
+.login-box {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  flex-direction: row;
+}
+
+.img {
+  background-image: linear-gradient(
+      rgba(36, 42, 46, 0.8),
+      rgba(36, 42, 46, 0.8)
+    ),
+    url("../public/building.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 44.5rem;
+  width: 55rem;
+}
+
+.grid2cols{
+  display: grid;
+  column-gap: 3rem;
+  row-gap: 3rem;
+  grid-template-columns: repeat(1, 30rem);
+  grid-template-rows: repeat(2, 1fr);
+  padding: 2rem 2rem 2rem 2rem;
+}
+
+.h1{
+ padding-top: 3rem;
+ padding-bottom: 1rem;
+ padding-left: 5rem;
+ color: white;
+ font-size: 5rem;
+}
+
+.h2{
+  padding: 5rem 3rem 1rem 0;
+}
+
+.h3{
+  color: #ddd;
+  font-size: 3rem;
+  padding-left: 5rem;
+  padding-top: 2rem;
+  
+}
+
+.input{
+  width: 10rem;
+}
+
+.btnp{
+  
+  padding-right: 10rem;
+  padding-left: 10rem;
+}
+
+.inputbox{
+  margin: 0 auto;
+  
+}
+$primary: #11998e;
+$secondary: #38ef7d;
+$white: #fff;
+$gray: #9b9b9b;
+.form__group {
+  position: relative;
+  padding: 15px 0 0;
+  margin-top: 10px;
+  width: 50%;
+}
+
+.form__field {
+  font-family: inherit;
+  width: 100%;
+  border: 0;
+  border-bottom: 2px solid $gray;
+  outline: 0;
+  font-size: 1.3rem;
+  color: #666;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+
+  &::placeholder {
+    color: transparent;
+  }
+
+  &:placeholder-shown ~ .form__label {
+    font-size: 1.3rem;
+    cursor: text;
+    top: 20px;
+  }
+}
+
+.form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: $gray;
+}
+
+.form__field:focus {
+  ~ .form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 1rem;
+    color: $primary;
+    font-weight:700;    
+  }
+  padding-bottom: 6px;  
+  font-weight: 700;
+  border-width: 3px;
+  border-image: linear-gradient(to right, $primary,$secondary);
+  border-image-slice: 1;
+}
+/* reset input */
+.form__field{
+  &:required,&:invalid { box-shadow:none; }
+}

@@ -1,7 +1,9 @@
 import { Link, NavLink } from "react-router-dom";
 import "../index.css"
-import "../homepage.css"
+import "../pages/Homepage.css"
 import Logo from "./Logo";
+import Button from "./Button";
+import LinkButton from "./LinkButton";
 function Nav(){
   return <nav className="nav">
     <Logo/>
@@ -19,8 +21,8 @@ function Nav(){
       <NavLink to="/resources">Resources</NavLink>
       </li>
     </ul>
-    <button className="btn primary-btn">Log in</button>
-    <button className="btn secondary-btn">Sign up</button>
+    <LinkButton to={"/signup"} style={"btn primary-btn"}>Sign up</LinkButton>
+    <LinkButton to={"/login"} style={"btn secondary-btn"}>Log in</LinkButton>
   </nav>
 }
 
