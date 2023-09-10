@@ -9,6 +9,8 @@ import Button from "./Button";
 import LinkButton from "./LinkButton";
 function Hero() {
   return (
+
+
     <>
       <div className="container">
         <div className="hero-1">
@@ -100,6 +102,7 @@ function Hero() {
           <h2>Based on your location</h2>
           <p>Some of our picked offices near your location</p>
           <div className="grid--2cols">
+
             <PropertyTiles/>
             <PropertyTiles/>
             <PropertyTiles/>

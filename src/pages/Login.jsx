@@ -53,6 +53,7 @@ function Login() {
               </div>
             
           </div>
+          {/* <button type="submit">Login</button> */}
           <Button to={"/"} style={"btn secondary-btn btnp"} type={"submit"} >
             Login
           </Button>
