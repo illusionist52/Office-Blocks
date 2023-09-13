@@ -104,8 +104,7 @@ function Hero() {
           <div className="grid--2cols">
 
             <PropertyTiles/>
-            <PropertyTiles/>
-            <PropertyTiles/>
+          
           </div>
           </div>
         </div>

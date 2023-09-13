@@ -7,6 +7,8 @@ import ManageProperty from './pages/ManageProperty'
 import Login from './pages/Login'
 import AppLayout from './ui/AppLayout'
 import Signup from './pages/SIgnup'
+import Rentee from './pages/Rentee'
+import UserDasboard from './ui/UserDashboard'
 
 function App() {
   
@@ -24,6 +26,10 @@ function App() {
       </Route>
       <Route path='login' element={<Login/>}/>
       <Route path='signup' element={<Signup/>}/>
+      <Route element={<Rentee/>}>
+        <Route path='user_dashboard' element={<UserDasboard/>}/>
+
+      </Route>
     </Routes>
    </BrowserRouter>
   )

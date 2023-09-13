@@ -12,7 +12,7 @@ body {
 }
 
 .logo {
-height: 5.2rem;
+  height: 5.2rem;
 }
 
 .btn {
@@ -37,14 +37,17 @@ height: 5.2rem;
   border: none;
 }
 
-.link{
+.link {
   display: inline-block;
   text-decoration: none;
   padding: o.4rem 0.8rem 0.4rem 0.8rem;
-  text-transform:capitalize;
+  text-transform: capitalize;
 }
 
-
-p{
+p {
   color: #666;
+}
+
+.pay-btn {
+  font-size: 1.4rem;
 }
