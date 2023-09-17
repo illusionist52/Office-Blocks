@@ -2,7 +2,7 @@ import LinkButton from "./LinkButton";
 import "./duepayment.css";
 function DuePayment() {
   return (
-    <div className="payment-box">
+    <div className="payment-box grid1">
       <div className="container--r ">
         <h3 className="t3-heading">Schedule payment </h3>
         <span className="tag">Due in 8 days</span>
