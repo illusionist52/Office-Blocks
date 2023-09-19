@@ -9,6 +9,7 @@ import AppLayout from './ui/AppLayout'
 import Signup from './pages/SIgnup'
 import Rentee from './pages/Rentee'
 import UserDasboard from './ui/UserDashboard'
+import SingleProperty from './pages/SingleProperty'
 
 function App() {
   
@@ -23,6 +24,7 @@ function App() {
       <Route path='buy' element={<Buy/>}/>
       <Route path='manage' element={<ManageProperty/>}/>
       <Route path='resources' element={<Resources/>}/>
+      <Route path='singleprop' element={<SingleProperty/>}/>
       </Route>
       <Route path='login' element={<Login/>}/>
       <Route path='signup' element={<Signup/>}/>

@@ -11,7 +11,7 @@ function PropertyTiles(){
       <p>/month</p>
       </div>
       
-      <h3>Vaibhav's Office</h3>
+      <Link to="/singleprop">Vaibhav's office</Link>
       <p>204 barkat ali wadala</p>
       <div className="container--r">
         <GiOfficeChair className="icon"/>
