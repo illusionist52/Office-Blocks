@@ -10,6 +10,7 @@ import Signup from './pages/SIgnup'
 import Rentee from './pages/Rentee'
 import UserDasboard from './ui/UserDashboard'
 import SingleProperty from './pages/SingleProperty'
+import Renter from './pages/Renter'
 
 function App() {
   
@@ -30,8 +31,9 @@ function App() {
       <Route path='signup' element={<Signup/>}/>
       <Route element={<Rentee/>}>
         <Route path='user_dashboard' element={<UserDasboard/>}/>
-
+        <Route path='renter_dashboard' element={<Renter/>}/>
       </Route>
+      
     </Routes>
    </BrowserRouter>
   )
