@@ -1,10 +1,22 @@
 import { useForm } from "react-hook-form";
 import "./signup.css"
 import Button from "../ui/Button";
+import { useMutation } from "@tanstack/react-query";
+import { createUser } from "../services/apiUsers";
+import toast from "react-hot-toast";
 function Signup() {
   const { register, handleSubmit} = useForm();
-  const onSubmit = data => console.log(data);
- 
+  
+  const {mutate, isLoading} = useMutation({
+    mutationFn: createUser,
+    onSuccess: ()=>{
+      toast.success("Account created successfully")
+    }
+  })
+
+  function onSubmit(data) {
+    mutate(data);
+  }
   
   return <>
   <div className="containerss">
