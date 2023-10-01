@@ -4,13 +4,9 @@ import "./login.scss";
 import { useState } from "react";
 function Login() {
   const { register, handleSubmit, reset } = useForm();
-  const [username, setUsername] = useState("")
-  const [password, setPassword] = useState("");
 
-  function handleData(){
-
-  }
-  
+  const onSubmit = data => console.log(data);
+   
   return (
     <div className="login-box">
       <div className="img" >
@@ -21,7 +17,7 @@ function Login() {
       <div className="inputbox" >
         <h2 className="h2">Welcome back</h2>
         <p>Please enter your details.</p>
-        <form onSubmit={handleSubmit((data)=> setData(JSON.stringify(data)))}>
+        <form onSubmit={handleSubmit(onSubmit)}>
           <div className="grid2cols">
             <div className="form__group field">
               <input
@@ -30,7 +26,6 @@ function Login() {
                 className="form__field"
                 placeholder="username"
                 {...register("username")}
-                onChange={(e)=>setUsername(e.target.value)}
                 required
               />
               <label htmlFor="username" className="form__label">
@@ -44,7 +39,6 @@ function Login() {
                 className="form__field"
                 placeholder="password"
                 {...register("password")}
-                onChange={(e)=>setPassword(e.target.value)}
                 required
               />
               <label htmlFor="username" className="form__label">
@@ -54,7 +48,7 @@ function Login() {
             
           </div>
           {/* <button type="submit">Login</button> */}
-          <Button to={"/user_dashboard"} style={"btn secondary-btn btnp"} type={"submit"} >
+          <Button style={"btn secondary-btn btnp"} type={"submit"} >
             Login
           </Button>
           
