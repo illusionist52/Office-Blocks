@@ -3,6 +3,7 @@ import "./propertytiles.css"
 import "../index.css"
 import { GiOfficeChair } from "react-icons/gi"
 import {BiCube} from "react-icons/bi"
+import { Link } from "react-router-dom"
 function PropertyTiles(){
   return <div className="grid-item">
       <img src="../../public/prop-1.jpg"/>
