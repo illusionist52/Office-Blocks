@@ -1,4 +1,11 @@
+import Nav from './../ui/Nav';
+
 function SingleProperty(){
-  return <div></div>
+  return (
+    <>
+      <Nav />
+      <h1>SINGLE PROPERTY PAGE</h1>
+    </>
+  );
 }
 export default SingleProperty;

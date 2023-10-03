@@ -23,7 +23,6 @@ function Hero() {
               A platform to buy, sell or rent any property without any commision
             </p>
             <div className="hero-span">
-
               <span>
                 50k+
                 <p>renters</p>
@@ -37,7 +36,7 @@ function Hero() {
             <LinkButton to={"/rent"} style={"btn secondary-btn"}>Browse properties</LinkButton>
           </div>
           <div className="hero-img">
-            <img src="../../public/office-1.jpg" />
+            <img src="../../Mindspace.png" />
           </div>
         </div>
 

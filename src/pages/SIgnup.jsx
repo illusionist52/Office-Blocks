@@ -36,7 +36,7 @@ function Signup() {
            
 
                 <form onSubmit={handleSubmit(onSubmit)}>
-                <h2>Create an Account</h2>
+                <h2 className="account-name">Create an Account</h2>
                     <input type="text" placeholder="username" {...register("username", {required: true})} />
                     <input type="password" placeholder="password" {...register("password", {required: true, max: 19, min: 8})} />
                     <select {...register("role", { required: true })}>

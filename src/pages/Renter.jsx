@@ -15,7 +15,7 @@ function Renter() {
     // </div>
     <div class="dashboard">
         <div class="left-section">
-            <h2>Your listed properties</h2>
+            <h2 className='listed-prop'>Your listed properties</h2>
             <div class="properties-container">
                 <RenterPropertyCard/>
                 <RenterPropertyCard/>

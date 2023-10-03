@@ -73,7 +73,7 @@ body {
     justify-content: flex-start;
 }
 
-h2 {
+.listed-prop {
     font-size: 24px; 
     margin-top: 10px;
     margin-bottom: 20px;
