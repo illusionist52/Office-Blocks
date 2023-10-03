@@ -5,6 +5,8 @@ import Logo from "./Logo";
 import Button from "./Button";
 import LinkButton from "./LinkButton";
 function Nav(){
+  const userData = localStorage.getItem("token");
+  
   return <nav className="nav">
     <Logo/>
     <ul>
@@ -21,8 +23,10 @@ function Nav(){
       <NavLink to="/resources">Resources</NavLink>
       </li>
     </ul>
-    <LinkButton to={"/signup"} style={"btn primary-btn"}>Sign up</LinkButton>
-    <LinkButton to={"/login"} style={"btn secondary-btn"}>Log in</LinkButton>
+    
+    {!userData && <LinkButton to={"/signup"} style={"btn primary-btn"}>Sign up</LinkButton>}
+    {!userData && <LinkButton to={"/login"} style={"btn secondary-btn"}>Log in</LinkButton>}
+    {userData && <p>welcome {userData.username}</p>}
   </nav>
 }
 

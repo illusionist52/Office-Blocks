@@ -64,7 +64,7 @@ function App() {
           style: {
             fontSize: "16px",
             maxWidth: "500px",
-            backgroundColor: "#666",
+            backgroundColor: "white",
             color: "#333",
           }
         }}

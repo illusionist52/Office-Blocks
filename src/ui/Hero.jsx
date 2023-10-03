@@ -8,6 +8,9 @@ import PropertyTiles from "./PropertyTiles";
 import Button from "./Button";
 import LinkButton from "./LinkButton";
 function Hero() {
+
+  
+
   return (
 
 

@@ -2,11 +2,13 @@ import { useForm } from "react-hook-form";
 import "./signup.css"
 import Button from "../ui/Button";
 import { useMutation } from "@tanstack/react-query";
-import { createUser } from "../services/apiUsers";
+import { checkUser, createUser } from "../services/apiUsers";
 import toast from "react-hot-toast";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 function Signup() {
   const { register, handleSubmit} = useForm();
-  
+  const navigate = useNavigate();
   const {mutate, isLoading} = useMutation({
     mutationFn: createUser,
     onSuccess: ()=>{
@@ -14,8 +16,15 @@ function Signup() {
     }
   })
 
+
   function onSubmit(data) {
     mutate(data);
+    if(data.role==="Renter"){
+    navigate("/renter_dashboard")
+    }
+    else{
+    navigate("/user_dashboard")
+    }
   }
   
   return <>
@@ -28,9 +37,9 @@ function Signup() {
 
                 <form onSubmit={handleSubmit(onSubmit)}>
                 <h2>Create an Account</h2>
-                    <input type="text" placeholder="Name" {...register("Name", {required: true})} />
-                    <input type="password" placeholder="Password" {...register("Password", {required: true, max: 19, min: 8})} />
-                    <select {...register("Role", { required: true })}>
+                    <input type="text" placeholder="username" {...register("username", {required: true})} />
+                    <input type="password" placeholder="password" {...register("password", {required: true, max: 19, min: 8})} />
+                    <select {...register("role", { required: true })}>
                       <option value="Renter">Renter</option>
                       <option value="Rentee">Rentee</option>
                     </select>

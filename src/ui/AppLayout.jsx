@@ -4,7 +4,7 @@ import Nav from "./Nav";
 function AppLayout() {
   return (
     <div>
-      <Nav />
+      
       <Outlet />
     </div>
   );
