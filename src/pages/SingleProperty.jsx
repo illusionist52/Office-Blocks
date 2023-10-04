@@ -1,6 +1,6 @@
 // import { useContext, useState } from "react";
 // import { useMutation, useQuery } from "react-query";
-// import { useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 // import { getProperty, removeBooking } from "../../utils/api";
 // import { PuffLoader } from "react-spinners";
 // import { AiFillHeart } from "react-icons/ai";
@@ -20,8 +20,8 @@ import Map from './../ui/Map';
 // import Heart from "../../components/Heart/Heart";
 
 const Property = () => {
-  // const { pathname } = useLocation();
-  // const id = pathname.split("/").slice(-1)[0];
+  const { pathname } = useLocation();
+  const id = pathname.split("/").slice(-1)[0];
   // const { data, isLoading, isError } = useQuery(["resd", id], () =>
   //   getProperty(id)
   // );

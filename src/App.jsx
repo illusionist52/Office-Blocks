@@ -14,7 +14,7 @@ import Renter from './pages/Renter'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import { Toaster } from 'react-hot-toast'
-
+import Properties from './pages/Properties'
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
@@ -46,6 +46,10 @@ function App() {
       <Route element={<Rentee/>}>
         <Route path='user_dashboard' element={<UserDasboard/>}/>
         <Route path='renter_dashboard' element={<Renter/>}/>
+      </Route>
+      <Route path="/properties">
+                  <Route index element={<Properties />} />
+                  <Route path=":propertyId" element={<SingleProperty />} />
       </Route>
       
     </Routes>
