@@ -6,12 +6,15 @@ import { checkUser } from "../services/apiUsers";
 import { useQuery } from "@tanstack/react-query";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
+import { func } from "prop-types";
+import getProperties from "../services/apiProperties";
 function Login() {
   const navigate = useNavigate();
   const { data: users, error } = useQuery({
     queryKey: ["users"],
     queryFn: checkUser,
   });
+
   const { register, handleSubmit, reset } = useForm();
 
   function onSubmit(data) {
