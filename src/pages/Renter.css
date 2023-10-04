@@ -205,3 +205,30 @@ body {
 .reject-btn {
     background-color: #f44336;
 }
+
+.AddProp{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.addprop{
+    display: flex;
+    justify-content: center;
+}
+
+.addpropbutton {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1.2rem;
+}
+
+.addpropbutton:hover {
+    background-color: #2980b9;
+}
