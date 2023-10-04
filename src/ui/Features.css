@@ -1,0 +1,33 @@
+.grid5 {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 30px;
+}
+
+.container {
+    max-width: 100%;
+    margin: auto;
+}
+
+.content {
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.featured .box {
+    box-shadow: 0 0 20px 0 rgb(112 121 138 / 18%);
+    border-radius: 6px;
+    padding: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
+    cursor: pointer;
+}
+
+.featured img {
+    width: 65px;
+    height: 65px;
+    margin: auto;
+}
