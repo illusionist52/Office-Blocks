@@ -2,8 +2,13 @@ import React from 'react'
 import "./Renter.css"
 import RenterPropertyCard from '../ui/RenterPropertyCard'
 import RequestCard from '../ui/RequestCard'
+import RenterNav from "../ui/RenterNav";
+import { useState } from "react";
+
 function Renter() {
+    const [isOpen, setIsOpen] = useState(false);
   return (
+
     // <div>
     //     <div class="navbar">
     //     <ul>
@@ -13,15 +18,27 @@ function Renter() {
             
     //     </ul> 
     // </div>
+    // <div>
+    // <RenterNav/>
+
     <div class="dashboard">
         <div class="left-section">
+            <div className="AddProp">
             <h2 className='listed-prop'>Your listed properties</h2>
+            <div class="addprop">
+                <button button class="addpropbutton" onClick={()=>setIsOpen(true)} isOpen={isOpen} setIsOpen={setIsOpen} >Add Property</button>
+            </div>
+            </div>
+
             <div class="properties-container">
                 <RenterPropertyCard/>
                 <RenterPropertyCard/>
                 <RenterPropertyCard/>
             </div>
         </div>
+
+        
+
 
         <div class="right-section">
             <div class="profile">
