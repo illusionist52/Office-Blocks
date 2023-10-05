@@ -27,7 +27,9 @@ import { property } from "lodash";
 
 const Property = () => {
   const { pathname } = useLocation();
+  
   const id = Number(pathname.split("/").slice(-1)[0]);
+  console.log(id)
 
   const {data, error, isLoading}= useQuery({
     queryKey: ["properties"],
@@ -49,6 +51,7 @@ const Property = () => {
   }
 
 
+  //DATA FETCHING : 
   const property =data?.find((property)=>property.id===id)
 
 

@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import "../index.css"
 import "../pages/Homepage.css"
 import Logo from "./Logo";
@@ -7,14 +7,13 @@ import LinkButton from "./LinkButton";
 import { BiSolidUser } from "react-icons/bi";
 import { useState } from "react";
 import toast from "react-hot-toast";
-import { useNavigate } from "react-router-dom";
 
-function Appnav(){
+function OwnerNav(){
   let usd=JSON.parse(localStorage.getItem("token"))
   const [userData,setUserData] = useState(usd) ;
-  
-  const navigate = useNavigate();
 
+  const navigate = useNavigate();
+  
   function Logout(){
     localStorage.removeItem("token");
     setUserData(usd);
@@ -27,7 +26,7 @@ function Appnav(){
     <Logo/>
     <ul>
       <li>
-        <NavLink to="/user_dashboard">Rentee DashBoards</NavLink>
+        <NavLink to="/renter_dashboard">Owner Dashboards</NavLink>
       </li>
       <li>
       <NavLink to="/properties">Browse Properties</NavLink>
@@ -44,4 +43,4 @@ function Appnav(){
   </nav>
 }
 
-export default Appnav;
+export default OwnerNav;
