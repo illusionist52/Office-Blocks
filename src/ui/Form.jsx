@@ -58,6 +58,7 @@ function Form() {
         <input type="number" placeholder="rooms" {...register("rooms", { required: true })} />
         <input type="text" placeholder="furniture" {...register("Furniture", { required: true })} />
         <input type="text" placeholder="manageprop" {...register("manageprop", { required: true })} />
+        <input type="text" placeholder="co-working" {...register("isCoworking", { required: true })} />
         <input type="text" placeholder="city" {...register("city", { required: true })} />
         <input type="text" placeholder="address" {...register("address", { required: true })} />
         <input type="file" accept="image/*" placeholder="image" {...register("image", { required: true })} />

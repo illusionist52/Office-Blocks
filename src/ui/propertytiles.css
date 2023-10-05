@@ -62,6 +62,14 @@ span.tag{
   background-color: #25b5793f;
 }
 
+span.tag2{
+  font-size: 13px;
+  margin: 0px 10px 0px 0px;
+  border-radius: 5px;
+  color: #ff98001a;
+  background-color: #cb8824c1;
+}
+
 span.cowork{
   color: rgb(184, 194, 81); 
   background-color: rgba(237, 227, 91, 0.258); 
