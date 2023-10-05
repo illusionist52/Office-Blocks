@@ -7,6 +7,9 @@ import { AiOutlineDollar } from "react-icons/ai"
 import PropertyTiles from "./PropertyTiles";
 import Button from "./Button";
 import LinkButton from "./LinkButton";
+import Features from './Features'
+import Footer from './Footer'
+
 function Hero() {
 
   
@@ -39,6 +42,8 @@ function Hero() {
             <img src="../../Mindspace.png" />
           </div>
         </div>
+
+        <Features />
 
 
         <div className="hero-1">
@@ -111,6 +116,8 @@ function Hero() {
           </div>
         </div>
       </div>
+
+      <Footer />
 
       
     </>
