@@ -34,20 +34,6 @@ textarea {
   padding: 10px;
 }
 
-.checkboxgroup {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  margin-top: 10px;
-}
-
-.checkboxgroup label {
-  display: flex;
-  align-items: center;
-  margin-right: 10px;
-  margin-bottom: 20px;
-}
-
 .uploadbutton {
   background-color: #3498db;
   color: #fff;
@@ -63,4 +49,5 @@ textarea {
   padding: 10px 20px;
   border-radius: 4px;
   cursor: pointer;
+  margin-left: 100px;
 }
