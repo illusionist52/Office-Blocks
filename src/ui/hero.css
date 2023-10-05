@@ -9,7 +9,7 @@
   display: flex;
   gap: 1rem;
   flex-direction: column;
-  background-color: #eee;
+  /* background-color: #eee; */
   width: 80rem;
   margin: 0 auto;
 }
