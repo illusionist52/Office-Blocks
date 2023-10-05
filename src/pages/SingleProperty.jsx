@@ -1,6 +1,7 @@
 // import { useContext, useState } from "react";
 // import { useMutation, useQuery } from "react-query";
 import { useLocation } from "react-router-dom";
+import { PuffLoader } from "react-spinners";
 // import { getProperty, removeBooking } from "../../utils/api";
 // import { PuffLoader } from "react-spinners";
 // import { AiFillHeart } from "react-icons/ai";
@@ -13,6 +14,9 @@ import { AiTwotoneCar } from "react-icons/ai";
 import { MdLocationPin, MdMeetingRoom } from "react-icons/md";
 import Footer from "../ui/Footer";
 import Map from './../ui/Map';
+import { useQuery } from "@tanstack/react-query";
+import getProperties from "../services/apiProperties";
+import { property } from "lodash";
 // import useAuthCheck from "../../hooks/useAuthCheck";
 // import { useAuth0 } from "@auth0/auth0-react";
 // import BookingModal from "../../components/BookingModal/BookingModal";
@@ -23,51 +27,30 @@ import Map from './../ui/Map';
 
 const Property = () => {
   const { pathname } = useLocation();
-  const id = pathname.split("/").slice(-1)[0];
-  // const { data, isLoading, isError } = useQuery(["resd", id], () =>
-  //   getProperty(id)
-  // );
+  const id = Number(pathname.split("/").slice(-1)[0]);
 
-  // const [modalOpened, setModalOpened] = useState(false);
-  // const { validateLogin } = useAuthCheck();
-  // const { user } = useAuth0();
+  const {data, error, isLoading}= useQuery({
+    queryKey: ["properties"],
+    queryFn: getProperties
+  })
 
-  // const {
-  //   userDetails: { token, bookings },
-  //   setUserDetails,
-  // } = useContext(UserDetailContext);
+  if (isLoading) {
+    return (
+      <div className="wrapper flexCenter" style={{ height: "60vh" }}>
+        <PuffLoader
+          height="80"
+          width="80"
+          radius={1}
+          color="#4066ff"
+          aria-label="puff-loading"
+        />
+      </div>
+    );
+  }
 
-  // const { mutate: cancelBooking, isLoading: cancelling } = useMutation({
-  //   mutationFn: () => removeBooking(id, user?.email, token),
-  //   onSuccess: () => {
-  //     setUserDetails((prev) => ({
-  //       ...prev,
-  //       bookings: prev.bookings.filter((booking) => booking?.id !== id),
-  //     }));
 
-  //     toast.success("Booking cancelled", { position: "bottom-right" });
-  //   },
-  // });
+  const property =data?.find((property)=>property.id===id)
 
-  // if (isLoading) {
-  //   return (
-  //     <div className="wrapper">
-  //       <div className="flexCenter paddings">
-  //         <PuffLoader />
-  //       </div>
-  //     </div>
-  //   );
-  // }
-
-  // if (isError) {
-  //   return (
-  //     <div className="wrapper">
-  //       <div className="flexCenter paddings">
-  //         <span>Error while fetching the property details</span>
-  //       </div>
-  //     </div>
-  //   );
-  // }
 
   return (
     <div className="wrapper">
@@ -89,10 +72,10 @@ const Property = () => {
             {/* head */}
             <div className="flexStart head">
               <span className="primaryText">
-                {/* {data?.title}  */} title
+                {property?.title} 
               </span>
               <span className="orangeText" style={{ fontSize: "1.5rem" }}>
-                {/* $ {data?.price} */} PRICE
+                $ {property?.price} 
               </span>
             </div>
 
@@ -102,7 +85,7 @@ const Property = () => {
               <div className="flexStart facility">
                 <FaShower size={20} color="#1F3E72" />
                 <span>
-                  {/* {data?.facilities?.bathrooms} Bathrooms */} BATHROOMS
+                  {property?.conference_room} Conference room/(s)
                 </span>
               </div>
 
@@ -118,7 +101,7 @@ const Property = () => {
               <div className="flexStart facility">
                 <MdMeetingRoom size={20} color="#1F3E72" />
                 <span>
-                  {/* {data?.facilities.bedrooms} Room/s */} ROOM/S
+                 {property?.area} sq ft
                 </span>
               </div>
             </div>
@@ -126,7 +109,7 @@ const Property = () => {
             {/* description */}
 
             <span className="secondaryText" style={{ textAlign: "justify" }}>
-              {/* {data?.description}  */} DESCRIPTIONS
+              {property?.description} 
             </span>
 
             {/* address */}
@@ -134,9 +117,7 @@ const Property = () => {
             <div className="flexStart" style={{ gap: "1rem" }}>
               <MdLocationPin size={25} />
               <span className="secondaryText">
-                {/* {data?.address}{" "} */} ADDRESS
-                {/* {data?.city}{" "} */}   CITY
-                {/* {data?.country} */} COUNTRY
+              {property?.address}
               </span>
             </div>
 
