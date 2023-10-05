@@ -16,11 +16,11 @@
 
 .container-md{
   display: flex;
+  justify-content: center;
   gap: 2rem;
+  background-color: #eeeeee87;
   flex-direction: column;
-  background-color: #eee;
-  width: 80rem;
-  margin: 0 auto;
+  width: 85rem;
 }
 
 .hero-1{

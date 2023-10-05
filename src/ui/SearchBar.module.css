@@ -1,3 +1,8 @@
+
+input{
+  border: 10px solid black;
+}
+
 .search {
   justify-self: center;
   border: none;
@@ -6,16 +11,16 @@
   border-radius: 0.7rem;
   width: 40rem;
   transition: all 0.3s;
-  color: brown;
-  background-color: wheat;
   margin: 2rem ;
   height: 3rem;
+  background-color: rgba(177, 177, 177, 0.297);
   /* background-color: var(--color-background-900); */
+  font-size: 1.3rem;
   
 }
 
 .search::placeholder {
-  color: brown;
+  color: black;
 }
 
 .search:focus {
