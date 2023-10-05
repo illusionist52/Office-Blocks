@@ -67,7 +67,7 @@ const Property = () => {
         </div>
 
         {/* image */}
-        <img className="office-img" src="./../public/office-2.jpg" alt="OFFICE PHOTO" />
+        <img className="office-img" src={property.image} alt="OFFICE PHOTO" />
 
         <div className="flexCenter property-details">
           {/* left */}
