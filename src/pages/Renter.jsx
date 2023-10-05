@@ -4,6 +4,7 @@ import RenterPropertyCard from '../ui/RenterPropertyCard'
 import RequestCard from '../ui/RequestCard'
 import RenterNav from "../ui/RenterNav";
 import { useState } from "react";
+import Button from '../ui/Button';
 
 function Renter() {
     const [isOpen, setIsOpen] = useState(false);
@@ -26,7 +27,7 @@ function Renter() {
             <div className="AddProp">
             <h2 className='listed-prop'>Your listed properties</h2>
             <div class="addprop">
-                <button button class="addpropbutton" onClick={()=>setIsOpen(true)} isOpen={isOpen} setIsOpen={setIsOpen} >Add Property</button>
+                <Button style={'btn secondary-btn'} to={'/addprop'} >Add property</Button>
             </div>
             </div>
 
