@@ -15,7 +15,7 @@ function AddPropModal() {
     }})
 
   function onSubmit(data) {
-    mutate(data);
+    // mutate(data, image: data.image.at(0));
     // navigate(-1)
     console.log(data)
   }
