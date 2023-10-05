@@ -104,7 +104,7 @@ function Hero() {
           </div>
         </div>
 
-        <div className="container-md">
+        {/* <div className="container-md">
           <div className="container-flex">
           <h2>Based on your location</h2>
           <p>Some of our picked offices near your location</p>
@@ -114,7 +114,7 @@ function Hero() {
           
           </div>
           </div>
-        </div>
+        </div> */}
       </div>
 
       <Footer />

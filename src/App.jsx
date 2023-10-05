@@ -16,6 +16,7 @@ import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import { Toaster } from 'react-hot-toast'
 import Properties from './pages/Properties'
 import AddPropModal from './ui/AddPropModal'
+import Property from './pages/SingleProperty'
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
@@ -40,7 +41,6 @@ function App() {
       <Route path='buy' element={<Buy/>}/>
       <Route path='manage' element={<ManageProperty/>}/>
       <Route path='resources' element={<Resources/>}/>
-      <Route path='singleprop' element={<SingleProperty/>}/>
       <Route path='addprop' element={<AddPropModal/>}/>
       </Route>
       <Route path='login' element={<Login/>}/>
@@ -49,11 +49,8 @@ function App() {
         <Route path='user_dashboard' element={<UserDasboard/>}/>
         <Route path='renter_dashboard' element={<Renter/>}/>
       </Route>
-      <Route path="/properties">
-                  <Route index element={<Properties />} />
-                  <Route path=":propertyId" element={<SingleProperty />} />
-      </Route>
-      
+      <Route path='properties' element={<Properties/>}/>
+      <Route path='properties/:propertyId' element={<Property/>}/>
     </Routes>
    </BrowserRouter>
    <Toaster
