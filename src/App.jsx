@@ -17,6 +17,7 @@ import { Toaster } from 'react-hot-toast'
 import Properties from './pages/Properties'
 import AddPropModal from './ui/AddPropModal'
 import Property from './pages/SingleProperty'
+import Form from './ui/Form'
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
@@ -41,7 +42,7 @@ function App() {
       <Route path='buy' element={<Buy/>}/>
       <Route path='manage' element={<ManageProperty/>}/>
       <Route path='resources' element={<Resources/>}/>
-      <Route path='addprop' element={<AddPropModal/>}/>
+      <Route path='addprop' element={<Form/>}/>
       </Route>
       <Route path='login' element={<Login/>}/>
       <Route path='signup' element={<Signup/>}/>
