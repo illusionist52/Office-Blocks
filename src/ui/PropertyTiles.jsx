@@ -3,9 +3,10 @@ import "./propertytiles.css"
 import "../index.css"
 import { GiOfficeChair } from "react-icons/gi"
 import {BiCube} from "react-icons/bi"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 function PropertyTiles({card}){
-  return <div className="grid-item">
+  const navigate=useNavigate()
+  return <div className="grid-item" onClick={()=>navigate(`/propeties/${card.id}`)}>
       <img src="../../public/prop-1.jpg"/>
       <div className="container--r">
       <span>₹ {card.price}</span>
