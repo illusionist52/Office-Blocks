@@ -20,7 +20,7 @@ export async function addProperties(property){
 
   const imageName=`${Math.random()}-${property.image.name}`.replaceAll("/","")
   // https://traxgpezajucfbzmvloz.supabase.co/storage/v1/object/public/Property%20Images/office-1.jpg
-  const imagePath =`${supabaseUrl}//storage/v1/object/public/Property%20Images/${imageName}`
+  const imagePath =`${supabaseUrl}/storage/v1/object/public/Property%20Images/${imageName}`
 const { data, error } = await supabase
 .from('Properties')
 .insert([{...property, image: imagePath}])
