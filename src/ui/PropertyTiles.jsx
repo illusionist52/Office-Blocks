@@ -3,11 +3,14 @@ import "./propertytiles.css"
 import "../index.css"
 import { GiOfficeChair } from "react-icons/gi"
 import { BiCube } from "react-icons/bi"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 
 
 function PropertyTiles({ card }) {
-  return <div className="grid-item">
+
+  const navigate = useNavigate();
+
+  return <div onClick={() => navigate(':propertyId')} className="grid-item">
     <img src="../../public/prop-1.jpg" />
     <div>
       {/* <span style={{ background: category === "For Sale" ? "#25b5791a" : "#ff98001a", color: category === "For Sale" ? "#25b579" : "#ff9800" }}>{category}</span> */}

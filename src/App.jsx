@@ -50,7 +50,7 @@ function App() {
         <Route path='renter_dashboard' element={<Renter/>}/>
       </Route>
       <Route path='properties' element={<Properties/>}/>
-      <Route path='/properties/:propertyId' element={<Property/>}/>
+      <Route path='properties/:propertyId' element={<Property/>}/>
     </Routes>
    </BrowserRouter>
    <Toaster
