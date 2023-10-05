@@ -35,7 +35,7 @@ function Nav(){
     
     {!userData && <LinkButton to={"/signup"} style={"btn primary-btn"}>Sign up</LinkButton>}
     {!userData && <LinkButton to={"/login"} style={"btn secondary-btn"}>Log in</LinkButton>}
-    {userData && <span><BiSolidUser color="" size={25}/> {userData.username}</span>}
+    {userData && <span style={{display:"flex", alignItems:"center", fontWeight:"600"}}><BiSolidUser color="" size={25}/> {userData.username}</span>}
     {userData && <Button style={"btn secondary-btn"} onClick={Logout} >Log out</Button>}
   </nav>
 }
