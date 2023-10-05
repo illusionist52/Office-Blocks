@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import SearchBar from "../ui/Searchbar";
+import SearchBar from "../ui/SearchBar";
 import "./Properties.css";
 import { useEffect } from "react";
 // import useProperties from "../../hooks/useProperties";
@@ -17,7 +17,7 @@ const Properties = () => {
   // useEffect(function(){
   //   getProperties().then((data)=>console.log(data))
   // })
-console.log(data)
+// console.log(data)
   // if (isError) {
   //   return (
   //     <div className="wrapper">
