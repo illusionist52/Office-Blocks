@@ -12,9 +12,9 @@ function Form() {
     onSuccess: ()=>{
       toast.success("Property added successfully")
     }})
-
+    const userData = JSON.parse( localStorage.getItem('token') )
   function onSubmit(data){
-    mutate(data);
+    mutate({data,image: data.image.at(0), OwnedBy:userData.username});
     console.log(data)
   }
 
