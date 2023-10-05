@@ -3,27 +3,27 @@ import './Features.css'
 const featured = [
     {
         cover: "../images/h1.png",
-        name: "Family House",
+        name: "Office 1",
         total: "122 Property",
     },
     {
         cover: "../images/h2.png",
-        name: "House & Villa",
+        name: "Office 2",
         total: "155 Property",
     },
     {
         cover: "../images/h3.png",
-        name: "Apartment",
+        name: "Office 3",
         total: "300 Property",
     },
     {
         cover: "../images/h4.png",
-        name: "Office & Studio",
+        name: "Office 4",
         total: "80 Property",
     },
     {
         cover: "../images/h6.png",
-        name: "Villa & Condo",
+        name: "Office 5",
         total: "80 Property",
     },
 ]

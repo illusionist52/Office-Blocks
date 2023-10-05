@@ -6,6 +6,8 @@ import { useLocation } from "react-router-dom";
 // import { AiFillHeart } from "react-icons/ai";
 import "./SingleProperty.css";
 
+import AppNav from '../ui/Appnav'
+
 import { FaShower } from "react-icons/fa";
 import { AiTwotoneCar } from "react-icons/ai";
 import { MdLocationPin, MdMeetingRoom } from "react-icons/md";
@@ -69,6 +71,9 @@ const Property = () => {
 
   return (
     <div className="wrapper">
+
+      <AppNav />
+
       <div className="flexColStart paddings innerWidth property-container">
         {/* like button */}
         <div className="like">
