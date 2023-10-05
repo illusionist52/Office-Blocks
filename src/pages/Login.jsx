@@ -25,8 +25,9 @@ function Login() {
     if (!existingUser) {
       toast.error("User not found");
     }
-    existingUser.role === "Renter" && navigate("/renter_dashboard");
-    existingUser.role === "Rentee" && navigate("/user_dashboard");
+    // existingUser.role === "Renter" && navigate("/renter_dashboard");
+    // existingUser.role === "Rentee" && navigate("/user_dashboard");
+    navigate("/")
     localStorage.setItem("token", JSON.stringify(existingUser));
   }
 

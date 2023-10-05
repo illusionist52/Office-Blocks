@@ -13,6 +13,7 @@ function Nav(){
   function Logout(){
     localStorage.removeItem("token");
     setUserData(usd);
+    toast.success("Logged out successfully");
   }
 
   return <nav className="nav">

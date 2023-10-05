@@ -19,12 +19,7 @@ function Signup() {
 
   function onSubmit(data) {
     mutate(data);
-    if(data.role==="Renter"){
-    navigate("/renter_dashboard")
-    }
-    else{
-    navigate("/user_dashboard")
-    }
+    navigate("/")
   }
   
   return <>
