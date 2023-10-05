@@ -4,21 +4,21 @@ import "../index.css"
 import { GiOfficeChair } from "react-icons/gi"
 import {BiCube} from "react-icons/bi"
 import { Link } from "react-router-dom"
-function PropertyTiles(){
+function PropertyTiles({card}){
   return <div className="grid-item">
       <img src="../../public/prop-1.jpg"/>
       <div className="container--r">
-      <span>₹250,000</span>
+      <span>₹ {card.price}</span>
       <p>/month</p>
       </div>
       
-      <Link to="/singleprop" className="prop-name">Vaibhav's office</Link>
-      <p>204 barkat ali wadala</p>
+      <Link to="/singleprop" className="prop-name">{card.title}</Link>
+      <p>{card.address} </p>
       <div className="container--r">
         <GiOfficeChair className="icon"/>
-        <p>16 persons</p>
+        <p>{card.conference_room} Conference Room/(s)</p>
         <BiCube className="icon"/>
-        <p>2400 sq ft</p>
+        <p> {card.area} /sqft </p>
       </div>
   </div>
 }

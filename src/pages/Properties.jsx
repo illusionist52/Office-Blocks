@@ -1,12 +1,13 @@
-import React, { useState } from "react";
-import SearchBar from "../ui/SearchBar";
+import { useState } from "react";
+import SearchBar from "../ui/Searchbar";
 import "./Properties.css";
-import { useEffect } from "react";
+// import { useEffect } from "react";
 // import useProperties from "../../hooks/useProperties";
 import { PuffLoader } from "react-spinners";
 import PropertyCard from "../ui/PropertyCard";
-import { useQueries, useQuery } from "@tanstack/react-query";
+import { useQuery } from "@tanstack/react-query";
 import getProperties from "../services/apiProperties";
+import PropertyTiles from "../ui/PropertyTiles";
 const Properties = () => {
   // const { data, isError, isLoading } = useProperties();
   const [filter, setFilter] = useState("");
@@ -43,6 +44,23 @@ const Properties = () => {
     <div className="wrapper">
       <div className="flexColCenter paddings innerWidth properties-container">
         <SearchBar filter={filter} setFilter={setFilter} />
+
+        <div className="container-md">
+          <div className="container-flex">
+          <h2>Based on your location</h2>
+          <p>Some of our picked offices near your location</p>
+          <div className="grid--2cols">
+
+          {
+            data.map((card, i)=> (<PropertyTiles card={card} key={i}/>))
+
+           
+          }
+          
+          </div>
+          </div>
+        </div>
+
 
         <div className="paddings flexCenter properties grid--2cols">
           {
