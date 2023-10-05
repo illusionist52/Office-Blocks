@@ -19,7 +19,7 @@ function PropertyTiles({card}){
         <GiOfficeChair className="icon"/>
         <p>{card.conference_room} Conference Room/(s)</p>
         <BiCube className="icon"/>
-        <p> {card.area} /sqft </p>
+        <p> {card.area} /sqftg </p>
       </div>
   </div>
 }
