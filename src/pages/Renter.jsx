@@ -29,17 +29,17 @@ function Renter() {
 
                 <div className="right-section">
                     <div className="profile">
-                        <h2 className="ownerName">Renter Profile</h2>
+                        <h2 className="ownerName">Owner Profile</h2>
                         <div className="profile-content">
                             <img src="../../public/profile.png" alt="Renter" className="profile-photo" />
                             <div className="profile-info">
                                 <p>Name: Atharva</p>
-                                <p>Email: am@xyz.com</p>
+                                <p>Number of Properties Listed : 4</p>
                             </div>
                         </div>
                     </div>
                     <div className="requests">
-                        <h2>Requests</h2>
+                        <h2 className="req">Requests</h2>
                         <div className='requestcard'>
                             <RequestCard />
                             <RequestCard />
