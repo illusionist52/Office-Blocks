@@ -12,7 +12,8 @@ function PropertyTiles({ card }) {
   const navigate = useNavigate();
 
   return <div onClick={() => navigate(`${card.id}`)} className="grid-item">
-    <img src="../../public/prop-1.jpg" />
+    <img src={card?.image} />
+
     <div>
       {/* <span style={{ background: category === "For Sale" ? "#25b5791a" : "#ff98001a", color: category === "For Sale" ? "#25b579" : "#ff9800" }}>{category}</span> */}
       {card.manageprop && <span className="tag" > For Sale </span>}

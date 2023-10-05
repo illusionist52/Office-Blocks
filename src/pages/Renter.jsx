@@ -21,8 +21,6 @@ function Renter() {
 
                     <div className="propertiesCard">
                         <RenterPropertyCard />
-                        <RenterPropertyCard />
-                        <RenterPropertyCard />
                     </div>
                 </div>
 
@@ -43,14 +41,6 @@ function Renter() {
                     <div className="requests">
                         <h2>Requests</h2>
                         <div className='requestcard'>
-                            <RequestCard />
-                            <RequestCard />
-                            <RequestCard />
-                            <RequestCard />
-                            <RequestCard />
-                            <RequestCard />
-                            <RequestCard />
-                            <RequestCard />
                             <RequestCard />
                             <RequestCard />
                             <RequestCard />
