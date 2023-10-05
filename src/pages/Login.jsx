@@ -18,14 +18,16 @@ function Login() {
   const { register, handleSubmit, reset } = useForm();
 
   function onSubmit(data) {
-    const existingUser = users.find((user) => user.username === data.username && user.password===data.password);
-    if(!existingUser){
-      toast.error("User not found")
+    const existingUser = users.find(
+      (user) =>
+        user.username === data.username && user.password === data.password
+    );
+    if (!existingUser) {
+      toast.error("User not found");
     }
     existingUser.role === "Renter" && navigate("/renter_dashboard");
     existingUser.role === "Rentee" && navigate("/user_dashboard");
-    localStorage.setItem("token",existingUser);
-   
+    localStorage.setItem("token", JSON.stringify(existingUser));
   }
 
   return (

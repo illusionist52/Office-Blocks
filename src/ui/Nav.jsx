@@ -5,7 +5,7 @@ import Logo from "./Logo";
 import Button from "./Button";
 import LinkButton from "./LinkButton";
 function Nav(){
-  const userData = localStorage.getItem("token");
+  const userData = JSON.parse(localStorage.getItem("token"));
   
   return <nav className="nav">
     <Logo/>
