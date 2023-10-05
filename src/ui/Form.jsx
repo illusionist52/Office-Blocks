@@ -23,7 +23,7 @@ function Form() {
   // }
 
   function onSubmit(data) {
-    mutate({ ...data, image: data.image[0] });
+    mutate({ ...data, OwnedBy: userData.username ,image: data.image[0] });
   }
 
   // function onSubmit(data) {
