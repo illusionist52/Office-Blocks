@@ -12,7 +12,7 @@ function RenterPropertyCard() {
           </div>
           <p className="c-detail">Property details</p>
 
-          <p className='c-desc'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Exercitationem nostrum similique eius cumque sapiente voluptate debitis aut itaque unde architecto!</p>
+          <p className='c-desc'>A spacious, modern office space located in the heart of the city, featuring open-concept workstations, natural light, and state-of-the-art amenities for productive collaboration.</p>
 
           <span className="tag buy c-tag" > Buy </span>
 
