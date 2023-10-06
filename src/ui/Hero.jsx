@@ -36,7 +36,7 @@ function Hero() {
                 <p>properties</p>
               </span>
             </div>
-            <LinkButton to={"/rent"} style={"btn secondary-btn"}>Browse properties</LinkButton>
+            <LinkButton to={"/properties"} style={"btn secondary-btn"}>Browse properties</LinkButton>
           </div>
           <div className="hero-img">
             <img src="../../Mindspace.png" />

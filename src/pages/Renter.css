@@ -55,9 +55,9 @@
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    background-color: rgba(238, 170, 170, 0.307);
+    background-color: rgba(170, 191, 238, 0.307);
     border-radius: 10px;
-    border: 1px solid rgb(255, 67, 67);
+    border: 1px solid rgb(67, 92, 255);
     padding: 20px;
     margin-bottom: 20px;
 }
@@ -88,7 +88,7 @@
 }
 
 .profile {
-    background-color: rgba(84, 144, 84, 0.332);
+    background-color: rgba(84, 144, 84, 0.318);
     border: 1px solid green;
     border-radius: 30px;
     padding: 20px;
@@ -119,6 +119,13 @@
 
 .profile-info p {
     margin: 0;
+    font-size: 1.1rem;
+    color: black;
+    font-weight: 500;
+}
+
+.req{
+    font-size: 2rem ;
 }
 
 .requests {
@@ -127,16 +134,14 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 2rem;
-    /* overflow: auto; */
+    gap: 1rem;
 }
 
 .reqcard {
     border-radius: 10px;
     border: 2px solid rgba(128, 128, 128, 0.163);
-    background-color: #fff;
     background-color: #f0f0f0;
-    padding: 20px;
+    padding: 1.4rem;
     border: 1px solid #ddd;
     border-radius: 5px;
     margin-top: 10px;
@@ -149,6 +154,9 @@
 
 .request-details {
     flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
 }
 
 .request-details h3 {
