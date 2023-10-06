@@ -64,10 +64,12 @@ span.tag{
 
 span.tag2{
   font-size: 13px;
+  padding: 4px 5px;
   margin: 0px 10px 0px 0px;
   border-radius: 5px;
-  color: #ff98001a;
-  background-color: #cb8824c1;
+  color: #bea500c8;
+  /* color: #b5ad9a8f; */
+  background-color: #e7d6b08f;
 }
 
 span.cowork{
