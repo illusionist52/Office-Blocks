@@ -8,28 +8,31 @@ import { PuffLoader } from "react-spinners";
 import { useQuery } from "@tanstack/react-query";
 import getProperties from "../services/apiProperties";
 import PropertyTiles from "../ui/PropertyTiles";
-import Appnav from './../ui/Appnav'
-import OwnerNav from './../ui/OwnerNav'
+import Appnav from "./../ui/Appnav";
+import OwnerNav from "./../ui/OwnerNav";
 import { useNavigate } from "react-router-dom";
+import styles from "../ui/Searchbar.module.css"
+import Button from "../ui/Button";
+import { AiOutlineSearch } from "react-icons/ai";
 
 const Properties = () => {
-
-  const userData = JSON.parse(localStorage.getItem('token'));
-
+  const [query, setQuery] = useState("");
+  const userData = JSON.parse(localStorage.getItem("token"));
+  console.log(query);
   const navigate = useNavigate();
   // const { data, isError, isLoading } = useProperties();
   useEffect(function () {
     if (!userData) {
       setTimeout(() => {
-        navigate('/login');
+        navigate("/login");
       }, 5000);
     }
-  })
-  const [filter, setFilter] = useState("");
+  });
+
   const { data, error, isLoading } = useQuery({
     queryKey: ["properties"],
-    queryFn: getProperties
-  })
+    queryFn: getProperties,
+  });
   // useEffect(function(){
   //   getProperties().then((data)=>console.log(data))
   // })
@@ -41,7 +44,12 @@ const Properties = () => {
   //     </div>
   //   );
   // }
-
+  function onSearch(){
+    const filterBySearch = data.filter((property) => { 
+      if (property.title.toLowerCase() 
+          .includes(query.toLowerCase())) { return property; } })
+        console.log(filterBySearch)
+  }
   if (isLoading) {
     return (
       <div className="wrapper flexCenter" style={{ height: "60vh" }}>
@@ -57,29 +65,31 @@ const Properties = () => {
   }
   return (
     <div className="wrapper">
-
-      {userData?.role === 'Renter' && <OwnerNav />}
-      {userData?.role === 'Rentee' && <Appnav />}
+      {userData?.role === "Renter" && <OwnerNav />}
+      {userData?.role === "Rentee" && <Appnav />}
 
       <div className="flexColCenter paddings innerWidth properties-container">
-        <SearchBar filter={filter} setFilter={setFilter} />
-
+        <input
+          style={{ border: "2px solid black" }}
+          className={styles.search}
+          type="text"
+          placeholder="Search properties..."
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+        />
+        <Button onClick={onSearch}><AiOutlineSearch/></Button>
         <div className="container-md">
           <div className="container-flex">
             <h2>Based on your location</h2>
             <p>Some of our picked offices near your location</p>
             <div className="grid--2cols">
-
-              {
-                data.map((card, i) => (<PropertyTiles card={card} key={i} />))
-
-
-              }
-
+              
+              {data.map((card, i) => (
+                <PropertyTiles card={card} key={i} />
+              ))}
             </div>
           </div>
         </div>
-
 
         {/* <div className="paddings flexCenter properties grid--2cols">
           {
