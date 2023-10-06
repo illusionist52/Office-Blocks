@@ -5,8 +5,33 @@ import RequestCard from '../ui/RequestCard'
 // import { useState } from "react";
 import Button from '../ui/Button';
 import OwnerNav from "../ui/OwnerNav";
-
+import { property } from "lodash";
+import { useQuery } from "@tanstack/react-query";
+import getProperties from "../services/apiProperties";
+import { PuffLoader } from "react-spinners";
 function Renter() {
+    const { data, error, isLoading } = useQuery({
+        queryKey: ["properties"],
+        queryFn: getProperties,
+      });
+      if (isLoading) {
+        return (
+          <div className="wrapper flexCenter" style={{ height: "60vh" }}>
+            <PuffLoader
+              height="80"
+              width="80"
+              radius={1}
+              color="#4066ff"
+              aria-label="puff-loading"
+            />
+          </div>
+        );}
+
+      const userData = JSON.parse(localStorage.getItem("token"))
+    
+      const fdata=data.filter((property)=>property.OwnedBy===userData.username)
+      console.log(fdata)
+      
     return (
         <>
             <OwnerNav />
@@ -20,7 +45,7 @@ function Renter() {
                     </div>
 
                     <div className="propertiesCard">
-                        <RenterPropertyCard />
+                       {fdata.map((card)=>(<RenterPropertyCard card={card} />))}
                     </div>
                 </div>
 
@@ -33,8 +58,8 @@ function Renter() {
                         <div className="profile-content">
                             <img src="../../public/profile.png" alt="Renter" className="profile-photo" />
                             <div className="profile-info">
-                                <p>Name: Atharva</p>
-                                <p>Number of Properties Listed : 4</p>
+                                <p>Name: {userData.username}</p>
+                                <p>Number of Properties Listed : {fdata.length}</p>
                             </div>
                         </div>
                     </div>

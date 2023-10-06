@@ -1,8 +1,8 @@
 import { useState } from "react"
 import styles from "./SearchBar.module.css"
 
-function SearchBar(){
-  const [query, setQuery]= useState("")
+function SearchBar({query, setQuery}){
+  
   return  <input
   style={{ border: "2px solid black" }}
   className={styles.search}

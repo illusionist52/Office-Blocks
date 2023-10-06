@@ -16,8 +16,8 @@ function PropertyTiles({ card }) {
 
     <div>
       {/* <span style={{ background: category === "For Sale" ? "#25b5791a" : "#ff98001a", color: category === "For Sale" ? "#25b579" : "#ff9800" }}>{category}</span> */}
-      {card.manageprop==="Buy" && <span className="tag" > For Sale </span>}
-      {card.manageprop==="Rent" && <span className="tag2" > For Lease </span>}
+      {card.manageprop==="Buy" && <span className="tag" > SALE </span>}
+      {card.manageprop==="Rent" && <span className="tag2" > LEASE </span>}
       {card.isCoworking &&<span className="tag cowork" > Co-Working </span>}
       {card.Furnished && <span className="tag furnish" > Furnished </span>}
     </div>

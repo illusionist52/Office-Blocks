@@ -1,20 +1,23 @@
 import './RenterPropertyCard.css'
-
-function RenterPropertyCard() {
+import { useQuery } from '@tanstack/react-query';
+import getProperties from '../services/apiProperties';
+import { property } from 'lodash';
+function RenterPropertyCard({card}) {
+ 
   return (
     <div>
       <div className="property-card1">
-        <img src="../../public/office-1.jpg" alt="Property 1" />
+        <img src={card.image} alt="Property 1" />
         <div>
           <div className='c-flex'>
-            <h3 className='c-title'>Title</h3>
-            <p className='c-price'> ₹ 4000 </p>
+            <h3 className='c-title'>{card.title}</h3>
+            <p className='c-price'> ₹{card.price}/m </p>
           </div>
-          <p className="c-detail">Property details</p>
+          <p className="c-detail">Address: {card.address}</p>
 
-          <p className='c-desc'>A spacious, modern office space located in the heart of the city, featuring open-concept workstations, natural light, and state-of-the-art amenities for productive collaboration.</p>
+          <p className='c-desc'>{card.description}</p>
 
-          <span className="tag buy c-tag" > Buy </span>
+          <span className="tag buy c-tag" > {card.manageprop} </span>
 
           {/* {card.manageprop && <span className="tag" > For Sale </span>}
           {!card.manageprop && <span className="tag cowork" > Co-Working </span>}
