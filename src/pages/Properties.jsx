@@ -15,6 +15,17 @@ import styles from "../ui/Searchbar.module.css"
 import Button from "../ui/Button";
 import { AiOutlineSearch } from "react-icons/ai";
 
+
+const getFilteItems = ( query, items ) =>{
+  if(!query){
+    return data;
+  }
+  else{
+    return items.filter(title => title.name.includes(query))
+  }
+}
+
+
 const Properties = () => {
   const [query, setQuery] = useState("");
   const userData = JSON.parse(localStorage.getItem("token"));
@@ -44,12 +55,16 @@ const Properties = () => {
   //     </div>
   //   );
   // }
-  function onSearch(){
-    const filterBySearch = data.filter((property) => { 
-      if (property.title.toLowerCase() 
-          .includes(query.toLowerCase())) { return property; } })
-        console.log(filterBySearch)
-  }
+  // function onSearch(){
+  //   const filterBySearch = data.filter((property) => { 
+  //     if (property.title.toLowerCase() 
+  //         .includes(query.toLowerCase())) { return property; } })
+  //       console.log(filterBySearch)
+  // }
+
+
+  
+
   if (isLoading) {
     return (
       <div className="wrapper flexCenter" style={{ height: "60vh" }}>
@@ -63,10 +78,16 @@ const Properties = () => {
       </div>
     );
   }
+
+  // const filteredItems = getFilteItems(query, data)
+
+
+
   return (
     <div className="wrapper">
       {userData?.role === "Renter" && <OwnerNav />}
       {userData?.role === "Rentee" && <Appnav />}
+
 
       <div className="flexColCenter paddings innerWidth properties-container">
         <input
@@ -77,13 +98,14 @@ const Properties = () => {
           value={query}
           onChange={(e) => setQuery(e.target.value)}
         />
-        <Button onClick={onSearch}><AiOutlineSearch/></Button>
+
+        <Button><AiOutlineSearch /></Button>
         <div className="container-md">
           <div className="container-flex">
             <h2>Based on your location</h2>
             <p>Some of our picked offices near your location</p>
             <div className="grid--2cols">
-              
+
               {data.map((card, i) => (
                 <PropertyTiles card={card} key={i} />
               ))}

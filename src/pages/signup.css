@@ -4,10 +4,8 @@
   height: 100vh;
 }
 
-.left12 {
+.signup-left {
   width: 50%;
-  background-color: #eee;
-  /* background-image: url('/public/office4.jpg'); */
   background-repeat: no-repeat;
   background-size: auto;
   background-size: cover;
@@ -15,7 +13,7 @@
       rgba(36, 42, 46, 0.352),
       rgba(36, 42, 46, 0.482)
     ),
-    url("../public/office4.jpg");
+    url("../public/office4.jpg"); 
 }
 
 .form-container {

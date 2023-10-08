@@ -6,9 +6,9 @@ import { PuffLoader } from "react-spinners";
 // import { PuffLoader } from "react-spinners";
 // import { AiFillHeart } from "react-icons/ai";
 import "./SingleProperty.css";
-
+import React from 'react';
 import AppNav from '../ui/Appnav'
-
+import { useEffect } from "react";
 import { FaShower } from "react-icons/fa";
 import { AiTwotoneCar } from "react-icons/ai";
 import { MdLocationPin, MdMeetingRoom } from "react-icons/md";
@@ -17,6 +17,7 @@ import Map from './../ui/Map';
 import { useQuery } from "@tanstack/react-query";
 import getProperties from "../services/apiProperties";
 import { property } from "lodash";
+import Modal from 'react-modal';
 // import useAuthCheck from "../../hooks/useAuthCheck";
 // import { useAuth0 } from "@auth0/auth0-react";
 // import BookingModal from "../../components/BookingModal/BookingModal";
@@ -25,13 +26,47 @@ import { property } from "lodash";
 // import { toast } from "react-toastify";
 // import Heart from "../../components/Heart/Heart";
 
+const customStyles = {
+  content: {
+    top: '50%',
+    left: '50%',
+    right: 'auto',
+    bottom: 'auto',
+    marginRight: '-50%',
+    transform: 'translate(-50%, -50%)',
+    zIndex: 1000
+  },
+};
+
+// Make sure to bind modal to your appElement (https://reactcommunity.org/react-modal/accessibility/)
+// Modal.setAppElement('#modal');
+useEffect(() => {
+  Modal.setAppElement('#modal');
+}, []);
+
 const Property = () => {
   const { pathname } = useLocation();
-  
+  let subtitle;
+  const [modalIsOpen, setIsOpen] = React.useState(false);
+
+  function openModal() {
+    setIsOpen(true);
+  }
+
+  function afterOpenModal() {
+    // references are now sync'd and can be accessed.
+    subtitle.style.color = '#f00';
+  }
+
+  function closeModal() {
+    setIsOpen(false);
+  }
+
+
   const id = Number(pathname.split("/").slice(-1)[0]);
   console.log(id)
 
-  const {data, error, isLoading}= useQuery({
+  const { data, error, isLoading } = useQuery({
     queryKey: ["properties"],
     queryFn: getProperties
   })
@@ -52,11 +87,11 @@ const Property = () => {
 
 
   //DATA FETCHING : 
-  const property =data?.find((property)=>property.id===id)
+  const property = data?.find((property) => property.id === id)
 
 
   return (
-    <div className="wrapper">
+    <div className="wrapper" id="modal">
 
       <AppNav />
 
@@ -69,16 +104,16 @@ const Property = () => {
         {/* image */}
         <img className="office-img" src={property.image} alt="OFFICE PHOTO" />
 
-        <div className="flexCenter property-details">
+        <div className="flexCenter property-details" id="MODAL">
           {/* left */}
           <div className="flexColStart left">
             {/* head */}
             <div className="flexStart head">
               <span className="primaryText">
-                {property?.title} 
+                {property?.title}
               </span>
               <span className="orangeText" style={{ fontSize: "1.5rem" }}>
-                $ {property?.price} 
+                $ {property?.price}
               </span>
             </div>
 
@@ -104,7 +139,7 @@ const Property = () => {
               <div className="flexStart facility">
                 <MdMeetingRoom size={20} color="#1F3E72" />
                 <span>
-                 {property?.area} sq ft
+                  {property?.area} sq ft
                 </span>
               </div>
             </div>
@@ -112,7 +147,7 @@ const Property = () => {
             {/* description */}
 
             <span className="secondaryText" style={{ textAlign: "justify" }}>
-              {property?.description} 
+              {property?.description}
             </span>
 
             {/* address */}
@@ -120,7 +155,7 @@ const Property = () => {
             <div className="flexStart" style={{ gap: "1rem" }}>
               <MdLocationPin size={25} />
               <span className="secondaryText">
-              {property?.address}
+                {property?.address}
               </span>
             </div>
 
@@ -152,7 +187,25 @@ const Property = () => {
               </button>
             )} */}
 
-            <button className="button">Book your visit</button>
+            <button onClick={openModal} className="button">Book your visit</button>
+            <Modal
+              isOpen={modalIsOpen}
+              onAfterOpen={afterOpenModal}
+              onRequestClose={closeModal}
+              style={customStyles}
+              contentLabel="Example Modal"
+            >
+              <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Hello</h2>
+              <button onClick={closeModal}>close</button>
+              <div>I am a modal</div>
+              <form>
+                <input />
+                <button>tab navigation</button>
+                <button>stays</button>
+                <button>inside</button>
+                <button>the modal</button>
+              </form>
+            </Modal>
 
             {/* <BookingModal
               opened={modalOpened}
