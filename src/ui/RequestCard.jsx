@@ -1,13 +1,14 @@
 import "../pages/Renter.css"
 
-function RequestCard() {
+function RequestCard({request}) {
   return (
     <div>
         <div className="reqcard">
                     <div className="request-details">
-                        <h3>Request from John Doe</h3>
-                        <p>Date: September 25, 2023</p>
-                        <p>Message: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <h2>{request.propertyName}</h2>
+                        <h3>Request from {request.requestedBy}</h3>
+                        <p>Date:{request.date}</p>
+                        <p>Location: {request.location}</p>
                     </div>
                     <div className="request-actions">
                         <button className="approve-btn">Approve</button>

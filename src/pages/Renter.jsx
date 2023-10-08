@@ -9,10 +9,15 @@ import { property } from "lodash";
 import { useQuery } from "@tanstack/react-query";
 import getProperties from "../services/apiProperties";
 import { PuffLoader } from "react-spinners";
+import { getRequests } from "../services/apiRequests";
 function Renter() {
     const { data, error, isLoading } = useQuery({
         queryKey: ["properties"],
         queryFn: getProperties,
+      });
+      const { data:requests } = useQuery({
+        queryKey: ["requests"],
+        queryFn: getRequests
       });
       if (isLoading) {
         return (
@@ -30,8 +35,10 @@ function Renter() {
       const userData = JSON.parse(localStorage.getItem("token"))
     
       const fdata=data.filter((property)=>property.OwnedBy===userData.username)
-      console.log(fdata)
       
+
+      const reqdata= requests.filter((request)=>request.ownedBy==userData.username)
+      console.log(reqdata)
     return (
         <>
             <OwnerNav />
@@ -66,10 +73,7 @@ function Renter() {
                     <div className="requests">
                         <h2 className="req">Requests</h2>
                         <div className='requestcard'>
-                            <RequestCard />
-                            <RequestCard />
-                            <RequestCard />
-                            <RequestCard />
+                           {reqdata.map((request)=>(<RequestCard request={request}/>))}
                         </div>
                     </div>
 

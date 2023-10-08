@@ -18,14 +18,12 @@ import { useQuery } from "@tanstack/react-query";
 import getProperties from "../services/apiProperties";
 import { property } from "lodash";
 import Modal from 'react-modal';
-// import useAuthCheck from "../../hooks/useAuthCheck";
-// import { useAuth0 } from "@auth0/auth0-react";
-// import BookingModal from "../../components/BookingModal/BookingModal";
-// import UserDetailContext from "../../context/UserDetailContext.js";
-// import { Button } from "@mantine/core";
-// import { toast } from "react-toastify";
-// import Heart from "../../components/Heart/Heart";
-
+import { useForm } from "react-hook-form";
+import Button from "../ui/Button";
+import { func } from "prop-types";
+import { useMutation } from "@tanstack/react-query";
+import addRequest from "../services/apiRequests";
+import toast from "react-hot-toast";
 const customStyles = {
   content: {
     top: '50%',
@@ -46,10 +44,27 @@ const Property = () => {
   const { pathname } = useLocation();
   let subtitle;
   const [modalIsOpen, setIsOpen] = React.useState(false);
+  const {register, handleSubmit, reset}= useForm();
+
+  const userData=JSON.parse(localStorage.getItem("token"))
 
   function openModal() {
     setIsOpen(true);
   }
+
+  const { mutate } = useMutation({
+    mutationFn: addRequest,
+    onSuccess: () => {
+     toast.success("request sent successfully")
+      reset();
+    }
+  })
+
+
+  function onSubmit(data){
+    mutate({...data,location:property.address,propertyName:property.title, ownedBy:property.OwnedBy, requestedBy:userData.username})
+  }
+
 
   function afterOpenModal() {
     // references are now sync'd and can be accessed.
@@ -196,14 +211,12 @@ const Property = () => {
               <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Hello</h2>
               <button onClick={closeModal}>close</button>
               <div>I am a modal</div>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa ad, vero delectus porro quibusdam sint recusandae alias sequi, dolorem veritatis laboriosam laudantium maiores dolor quo corrupti asperiores omnis odit praesentium dolores excepturi impedit rem veniam labore laborum! Veritatis quaerat explicabo, excepturi quam magnam vero laboriosam et numquam nihil dolores. Corporis eos fugit, rem perferendis enim velit molestias facere similique tenetur animi voluptatibus consequuntur, iusto, ratione delectus dolorem atque veniam. Pariatur fugiat quam inventore ipsum sed? Laboriosam eaque id quos! Harum pariatur cumque error enim quam blanditiis est deserunt eveniet, modi tempora alias porro iure vitae necessitatibus. Neque minus minima officia est, reiciendis nisi, repellat praesentium mollitia obcaecati dolore et molestias architecto nam explicabo, nihil animi ullam exercitationem illo aperiam aspernatur? Mollitia illum repellat eligendi deleniti incidunt quis eos dolorum, praesentium totam distinctio facere aperiam odio voluptate dolorem nisi sequi dicta pariatur. Molestias id culpa, veritatis animi consequatur ad, maxime odio ducimus quod voluptatem tempora iste temporibus? Minus amet assumenda eum ipsa inventore et ab voluptas at laborum eius, libero pariatur iusto atque dolore sapiente quod sunt officia dicta, ducimus molestiae, ad blanditiis architecto impedit qui! Fuga in suscipit officiis rerum, maxime doloribus quasi consequatur odit quam ad, quos neque ea.</p>
-              <form>
-                <input />
-               
-                <button>tab navigation</button>
-                <button>stays</button>
-                <button>inside</button>
-                <button>the modal</button>
+             
+              <form onSubmit={handleSubmit(onSubmit)}>
+              <input type="text" placeholder="location" value={property.address} disabled/>
+              <input type="text" placeholder="date" {...register("date", { required: true })} />
+              <input type="text" placeholder="time" {...register("time", { required: true })} />
+              <button type="submit">Book</button>
               </form>
             </Modal>
 
