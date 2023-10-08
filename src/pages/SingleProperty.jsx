@@ -40,9 +40,7 @@ const customStyles = {
 
 // Make sure to bind modal to your appElement (https://reactcommunity.org/react-modal/accessibility/)
 // Modal.setAppElement('#modal');
-useEffect(() => {
-  Modal.setAppElement('#modal');
-}, []);
+
 
 const Property = () => {
   const { pathname } = useLocation();
@@ -198,8 +196,10 @@ const Property = () => {
               <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Hello</h2>
               <button onClick={closeModal}>close</button>
               <div>I am a modal</div>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa ad, vero delectus porro quibusdam sint recusandae alias sequi, dolorem veritatis laboriosam laudantium maiores dolor quo corrupti asperiores omnis odit praesentium dolores excepturi impedit rem veniam labore laborum! Veritatis quaerat explicabo, excepturi quam magnam vero laboriosam et numquam nihil dolores. Corporis eos fugit, rem perferendis enim velit molestias facere similique tenetur animi voluptatibus consequuntur, iusto, ratione delectus dolorem atque veniam. Pariatur fugiat quam inventore ipsum sed? Laboriosam eaque id quos! Harum pariatur cumque error enim quam blanditiis est deserunt eveniet, modi tempora alias porro iure vitae necessitatibus. Neque minus minima officia est, reiciendis nisi, repellat praesentium mollitia obcaecati dolore et molestias architecto nam explicabo, nihil animi ullam exercitationem illo aperiam aspernatur? Mollitia illum repellat eligendi deleniti incidunt quis eos dolorum, praesentium totam distinctio facere aperiam odio voluptate dolorem nisi sequi dicta pariatur. Molestias id culpa, veritatis animi consequatur ad, maxime odio ducimus quod voluptatem tempora iste temporibus? Minus amet assumenda eum ipsa inventore et ab voluptas at laborum eius, libero pariatur iusto atque dolore sapiente quod sunt officia dicta, ducimus molestiae, ad blanditiis architecto impedit qui! Fuga in suscipit officiis rerum, maxime doloribus quasi consequatur odit quam ad, quos neque ea.</p>
               <form>
                 <input />
+               
                 <button>tab navigation</button>
                 <button>stays</button>
                 <button>inside</button>
