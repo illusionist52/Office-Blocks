@@ -8,7 +8,7 @@ import { PuffLoader } from "react-spinners";
 import "./SingleProperty.css";
 import React from 'react';
 import AppNav from '../ui/Appnav'
-
+import { useEffect } from "react";
 import { FaShower } from "react-icons/fa";
 import { AiTwotoneCar } from "react-icons/ai";
 import { MdLocationPin, MdMeetingRoom } from "react-icons/md";
@@ -34,11 +34,15 @@ const customStyles = {
     bottom: 'auto',
     marginRight: '-50%',
     transform: 'translate(-50%, -50%)',
+    zIndex: 1000
   },
 };
 
 // Make sure to bind modal to your appElement (https://reactcommunity.org/react-modal/accessibility/)
-// Modal.setAppElement('#yourAppElement');
+// Modal.setAppElement('#modal');
+useEffect(() => {
+  Modal.setAppElement('#modal');
+}, []);
 
 const Property = () => {
   const { pathname } = useLocation();
@@ -87,7 +91,7 @@ const Property = () => {
 
 
   return (
-    <div className="wrapper">
+    <div className="wrapper" id="modal">
 
       <AppNav />
 
@@ -100,7 +104,7 @@ const Property = () => {
         {/* image */}
         <img className="office-img" src={property.image} alt="OFFICE PHOTO" />
 
-        <div className="flexCenter property-details">
+        <div className="flexCenter property-details" id="MODAL">
           {/* left */}
           <div className="flexColStart left">
             {/* head */}

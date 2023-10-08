@@ -24,7 +24,7 @@ function Signup() {
 
   return <>
     <div className="containerss">
-      <div className="left">
+      <div className="signup-left">
         <div className="background-image"></div>
       </div>
       <div className="form-container">
