@@ -15,7 +15,7 @@ function Renter() {
         queryKey: ["properties"],
         queryFn: getProperties,
       });
-      const { data:requests } = useQuery({
+      const { data:requests , isLoading:reqloading} = useQuery({
         queryKey: ["requests"],
         queryFn: getRequests
       });
@@ -31,14 +31,26 @@ function Renter() {
             />
           </div>
         );}
+        if (reqloading) {
+            return (
+              <div className="wrapper flexCenter" style={{ height: "60vh" }}>
+                <PuffLoader
+                  height="80"
+                  width="80"
+                  radius={1}
+                  color="#4066ff"
+                  aria-label="puff-loading"
+                />
+              </div>
+            );}
 
       const userData = JSON.parse(localStorage.getItem("token"))
     
       const fdata=data.filter((property)=>property.OwnedBy===userData.username)
       
 
-      const reqdata= requests.filter((request)=>request.ownedBy==userData.username)
-      console.log(reqdata)
+      const reqdata= requests.filter((request)=>request.ownedBy===userData.username &&request.status==="PENDING" )
+      console.log(requests)
     return (
         <>
             <OwnerNav />
@@ -52,7 +64,7 @@ function Renter() {
                     </div>
 
                     <div className="propertiesCard">
-                       {fdata.map((card)=>(<RenterPropertyCard card={card} />))}
+                       {fdata.map((card)=>(<RenterPropertyCard card={card} key={card.id} />))}
                     </div>
                 </div>
 
@@ -73,7 +85,7 @@ function Renter() {
                     <div className="requests">
                         <h2 className="req">Requests</h2>
                         <div className='requestcard'>
-                           {reqdata.map((request)=>(<RequestCard request={request}/>))}
+                           {reqdata.map((request)=>(<RequestCard key={request.id} request={request}/>))}
                         </div>
                     </div>
 

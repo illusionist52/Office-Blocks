@@ -5,12 +5,16 @@ import "./form.css"
 import { useMutation } from '@tanstack/react-query';
 import { addProperties } from '../services/apiProperties';
 import toast from 'react-hot-toast';
+import { useNavigate } from 'react-router';
 function Form() {
-  const { register, handleSubmit, } = useForm();
+  const navigate= useNavigate();
+  const { register, handleSubmit,reset } = useForm();
   const { mutate, isLoading } = useMutation({
     mutationFn: addProperties,
     onSuccess: () => {
       toast.success("Property added successfully")
+      reset()
+      navigate(-1);
     }
   })
 
