@@ -25,3 +25,16 @@ if(error){
 }
 return data
 }
+
+export async function updateRequests(id){
+  const { data, error } = await supabase
+  .from('Requests')
+  .update({ status: "Approved" })
+  .eq('id', id)
+
+  if(error){
+    console.error(error)
+    throw new Error("requests could not be updated")
+  }
+  return data
+}
