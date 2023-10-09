@@ -36,7 +36,7 @@ function UserDasboard() {
       <Appnav />
       {/* <div className={styles.grid}>
         <TenantApplication/>
-      <DuePayment />
+        <DuePayment />
 
         <div className={styles.grid1}>
           <TenantApplication />
@@ -47,6 +47,7 @@ function UserDasboard() {
         <div className={styles.grid5}><PropertiesRented /></div>
       </div> */}
 
+      <DuePayment />
 
 <div className="dashboard">
                 <div className="left-section">
