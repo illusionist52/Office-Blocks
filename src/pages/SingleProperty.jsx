@@ -24,6 +24,7 @@ import { func } from "prop-types";
 import { useMutation } from "@tanstack/react-query";
 import addRequest from "../services/apiRequests";
 import toast from "react-hot-toast";
+import { BiSolidUser } from "react-icons/bi";
 const customStyles = {
   content: {
     top: '50%',
@@ -170,6 +171,14 @@ const Property = () => {
               <span className="secondaryText">
                 {property?.address}
               </span>
+              
+            </div>
+            <div className="flexStart" style={{ gap: "1rem" }}>
+              <BiSolidUser size={25} />
+              <span className="secondaryText">
+                Owned by {property?.OwnedBy}
+              </span>
+              
             </div>
 
             {/* booking button */}
