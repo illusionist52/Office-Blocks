@@ -1,6 +1,16 @@
-import LinkButton from "./LinkButton";
+// import LinkButton from "./LinkButton";
 import "./duepayment.css";
+import StripeCheckout from 'react-stripe-checkout';
+import toast from "react-hot-toast";
+
 function DuePayment() {
+
+
+  const onToken = (token) => {
+    console.log(token);
+    toast.success('Payment Successfully Done')
+  }
+
   return (
     <div className="payment-box grid1">
       <div className="container--r ">
@@ -20,7 +30,11 @@ function DuePayment() {
           <p className="container--r"> <span className="circle circle-red"></span> Remaining</p>
           <h4>500</h4>
         </div>
-        <LinkButton style={"btn secondary-btn pay-btn"} >Schedule payment</LinkButton>
+        {/* <LinkButton style={"btn secondary-btn pay-btn"} >Schedule payment</LinkButton> */}
+        <StripeCheckout
+          token={onToken}
+          stripeKey="pk_test_51NzOauSGu21KOdqPytRZ1vVQhPX2dJkB1EVBW1cSOibDjt4CCta20a1z0K1O4lqbZgvqARqbZ7TdgsVqS3VxXHLc00zTLy36Vk"
+        />
       </div>
     </div>
   );

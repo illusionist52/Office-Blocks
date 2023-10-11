@@ -217,15 +217,16 @@ const Property = () => {
               style={customStyles}
               contentLabel="Example Modal"
             >
-              <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Hello</h2>
-              <button onClick={closeModal}>close</button>
-              <div>I am a modal</div>
+              <div style={{display: "flex", justifyContent: "space-between", marginBottom: "1rem"}}>
+                <h2 ref={(_subtitle) => (subtitle = _subtitle)} style={{color: "black"}}>Book Your visit</h2>
+                <button onClick={closeModal} className="btn secondary-btn">close</button>
+              </div>
              
               <form onSubmit={handleSubmit(onSubmit)}>
               <input type="text" placeholder="location" value={property.address} disabled/>
               <input type="text" placeholder="date" {...register("date", { required: true })} />
               <input type="text" placeholder="time" {...register("time", { required: true })} />
-              <button type="submit">Book</button>
+              <button type="submit" className="btn secondary-btn">Book</button>
               </form>
             </Modal>
 

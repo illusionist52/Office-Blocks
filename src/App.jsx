@@ -15,7 +15,6 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import { Toaster } from 'react-hot-toast'
 import Properties from './pages/Properties'
-import AddPropModal from './ui/AddPropModal'
 import Property from './pages/SingleProperty'
 import Form from './ui/Form'
 const queryClient = new QueryClient({
