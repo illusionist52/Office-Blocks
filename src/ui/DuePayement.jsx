@@ -2,6 +2,7 @@
 import "./duepayment.css";
 import StripeCheckout from 'react-stripe-checkout';
 import toast from "react-hot-toast";
+// import LinkButton from "./LinkButton";
 
 function DuePayment() {
 

@@ -37,8 +37,10 @@
 }
 
 .requestcard {
-    height: 400px;
+    height: 600px;
     overflow-x: auto;
+    width: 29rem;
+    margin: auto;
 }
 
 /* .properties {
@@ -138,17 +140,17 @@
 }
 
 .reqcard {
+    max-width: 100%;
     border-radius: 10px;
     border: 2px solid rgba(128, 128, 128, 0.163);
     background-color: #f0f0f0;
     padding: 1.4rem;
     border: 1px solid #ddd;
     border-radius: 5px;
-    margin-top: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
+    /* background-color: red; */
     gap: 10rem 2rem;
 }
 
@@ -157,6 +159,8 @@
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+    width: 100%;
+    /* background-color: red; */
 }
 
 .request-details h3 {
