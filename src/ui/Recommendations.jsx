@@ -7,26 +7,9 @@ import { getRequests } from "../services/apiRequests";
 import { PuffLoader } from "react-spinners";
 
 
-function Recommendations() {
-  const { data:requests, isLoading } = useQuery({
-    queryKey: ["requests"],
-    queryFn: getRequests
-  });
-  const userdata= JSON.parse(localStorage.getItem("token"))
-  if (isLoading) {
-    return (
-      <div className="wrapper flexCenter" style={{ height: "60vh" }}>
-        <PuffLoader
-          height="80"
-          width="80"
-          radius={1}
-          color="#4066ff"
-          aria-label="puff-loading"
-        />
-      </div>
-    );}
-    const fildata=requests.filter((request)=>request.requestedBy===userdata.username)
-    console.log(fildata)
+function Recommendations({fildata}) {
+ 
+  
   return (
     <div className={styles.box}>
       <div className="dashboard">

@@ -3,22 +3,29 @@ import "./duepayment.css";
 import StripeCheckout from 'react-stripe-checkout';
 import toast from "react-hot-toast";
 import Modal from 'react-modal';
-import React from "react";
+import React, { useRef, useState } from "react";
 import Button from "./Button";
+import { property, set } from "lodash";
 // import LinkButton from "./LinkButton";
 
-function DuePayment() {
+function DuePayment({fildata, properties}) {
   const [modalIsOpen, setIsOpen] = React.useState(false);
-
+  const [select, setSelect]=useState("")
+ 
+  
+  const approveddata= fildata.filter((request)=>request.status==="Approved")
+  if(select){
+  }
   function openModal() {
     setIsOpen(true);
   }
 
   const onToken = (token) => {
-
+    const filprop=properties.find((prop)=>prop.title===select)
+    console.log(filprop.price)
     // Calculate the total amount including the commission
-    const paymentAmount = 100; // Payment amount in cents
-    const commission = 10; // Commission amount in cents
+    const paymentAmount = 5000; // Payment amount in cents
+    const commission = paymentAmount*0.1; // Commission amount in cents
     const totalAmount = paymentAmount + commission;
 
     // Add your logic here to process the payment using the token and totalAmount
@@ -82,10 +89,11 @@ function DuePayment() {
           </div>
 
           <form>
-            <input type="text" placeholder="Property Name" required/>
-            {/* <input type="text" placeholder="location" value={property.address} disabled/> */}
-            {/* <input type="text" placeholder="date" {("date", { required: true })} />
-              <input type="text" placeholder="time" {("time", { required: true })} /> */}
+            <select value={select} onChange={(e)=>{setSelect(e.target.value)}} >
+              <option>Select an item</option>
+              {approveddata.map((req)=><option value={req.propertyName}>{req.propertyName}</option>)}
+            </select>
+           
 
           </form>
 
