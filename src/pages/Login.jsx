@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form";
 import Button from "../ui/Button";
-import "./login.scss";
+import "./Login.scss";
 import { useEffect, useState } from "react";
 import { checkUser } from "../services/apiUsers";
 import { useQuery } from "@tanstack/react-query";
