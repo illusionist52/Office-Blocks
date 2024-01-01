@@ -1,11 +1,8 @@
-import Nav from "../ui/Nav";
+import Homepage from "./Homepage";
 
-function Buy() {
-  return (
-    <>
-      <Nav />
-      <h1> THIS IS THE BUY PAGE </h1>
-    </>
-  )
+function Buy(){
+  return <div>
+    <h1>Buy</h1>
+  </div>
 }
 export default Buy;

@@ -1,12 +1,22 @@
 import "../ui/hero.css";
 import "../index.css";
-
+import "./propertytiles.css"
 import { FaPercentage } from "react-icons/fa"
 import { HiOfficeBuilding } from "react-icons/hi"
 import { AiOutlineDollar } from "react-icons/ai"
 import PropertyTiles from "./PropertyTiles";
+import Button from "./Button";
+import LinkButton from "./LinkButton";
+import Features from './Features'
+import Footer from './Footer'
+
 function Hero() {
+
+  
+
   return (
+
+
     <>
       <div className="container">
         <div className="hero-1">
@@ -26,12 +36,14 @@ function Hero() {
                 <p>properties</p>
               </span>
             </div>
-            <button className="btn secondary-btn">Browse properties</button>
+            <LinkButton to={"/properties"} style={"btn secondary-btn"}>Browse properties</LinkButton>
           </div>
           <div className="hero-img">
-            <img src="../../public/office-1.jpg" />
+            <img src="../../Mindspace.png" />
           </div>
         </div>
+
+        <Features />
 
 
         <div className="hero-1">
@@ -45,8 +57,8 @@ function Hero() {
               buying a new home, we make it easy and efficient. The best part?
               you'll save a bunch of money and time with our services
             </p>
-
-            <button className="btn secondary-btn">See more</button>
+           
+            <LinkButton to={"/login"} style={"btn secondary-btn"}>See more</LinkButton>
           </div>
         </div>
 
@@ -92,18 +104,22 @@ function Hero() {
           </div>
         </div>
 
-        <div className="container-md">
+        {/* <div className="container-md">
           <div className="container-flex">
-            <h2>Based on your location</h2>
-            <p>Some of our picked offices near your location</p>
-            <div className="grid--2cols">
-              <PropertyTiles />
-            </div>
+          <h2>Based on your location</h2>
+          <p>Some of our picked offices near your location</p>
+          <div className="grid--2cols">
+
+            <PropertyTiles/>
+          
           </div>
-        </div>
+          </div>
+        </div> */}
       </div>
 
+      <Footer />
 
+      
     </>
   );
 }

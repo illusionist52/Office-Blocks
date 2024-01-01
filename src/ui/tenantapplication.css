@@ -1,0 +1,26 @@
+.tenant-box{
+  margin: 2rem 0 0 2rem;
+  border: 2px solid rgba(53, 92, 100, 0.5);
+  max-width: 70vw;
+  border-radius: 15px;
+  height: 7rem;
+  background-color: #dbf4e4;
+}
+
+.book-icon{
+  font-size: 3rem;
+  /* padding: 0.5rem 1rem 1rem 0.5rem; */
+  color: #345B63; 
+}
+
+.tenant-icon-box{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem ;
+}
+
+.back-color{
+  background-color:  #dbf4e4;
+}
+

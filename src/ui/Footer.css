@@ -1,0 +1,60 @@
+.f-container {
+    justify-content: space-between;
+    border-top: .5px solid rgba(0, 0, 0, 0.148)
+}
+
+.f-left {
+    gap: 1rem;
+}
+
+.f-menu {
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .f-container {
+        justify-content: center;
+    }
+
+    .f-container>div {
+        align-items: center !important;
+        text-align: center;
+    }
+
+    .f-right {
+        justify-content: center;
+    }
+}
+
+.footerContact {
+    padding-top: -100px;
+    margin-top: 3rem;
+    background-color: #27ae60;
+    padding: 40px 0;
+    color: #fff;
+}
+
+.footerContact h1 {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.flex {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn5 {
+    border-radius: 50px;
+    padding: 20px 40px;
+    color: #27ae60;
+    font-size: 20px;
+    font-weight: 400;
+    border: 5px solid #27ae601f;
+    background: #fff;
+}

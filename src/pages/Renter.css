@@ -1,0 +1,226 @@
+.dashboard {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    grid-template-rows: 1fr;
+    grid-template-areas: "left right";
+}
+
+.right-section {
+    grid-area: right;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    width: 100%;
+}
+
+.left-section {
+    grid-area: left;
+    padding: 2rem;
+    height: 800px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.listed-prop {
+    font-size: 2rem;
+    margin: 10px 0px 20px 0px;
+}
+
+.propertiesCard {
+    border: 2px solid rgba(128, 128, 128, 0.163);
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    overflow-x: auto;
+    /* background-color: red; */
+}
+
+.requestcard {
+    height: 600px;
+    overflow-x: auto;
+    width: 29rem;
+    margin: auto;
+}
+
+/* .properties {
+    flex-grow: 1;
+    overflow: auto;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+} */
+
+.property-card1{
+    gap: 1rem;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    background-color: rgba(170, 191, 238, 0.307);
+    border-radius: 10px;
+    border: 1px solid rgb(67, 92, 255);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.property-card1 img {
+    max-width: 50%;
+    max-height: auto;
+    margin-right: 10px;
+}
+
+.property-card1 .property-info{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.property-card1 h3{
+    margin-top: 0;
+}
+
+.property-card1 p{
+    margin: 0;
+}
+
+.ownerName{
+    font-size: 30px;
+    padding-bottom: 20px;
+}
+
+.profile {
+    background-color: rgba(84, 144, 84, 0.318);
+    border: 1px solid green;
+    border-radius: 30px;
+    padding: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 90%;
+    margin: auto;
+}
+
+.profile-photo {
+    max-width: 30%;
+    max-height: auto;
+    margin-right: 10px;
+}
+
+.profile-content {
+    display: flex;
+    align-items: flex-start;
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.profile-info p {
+    margin: 0;
+    font-size: 1.1rem;
+    color: black;
+    font-weight: 500;
+}
+
+.req{
+    font-size: 2rem ;
+}
+
+.requests {
+    padding: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.reqcard {
+    max-width: 100%;
+    border-radius: 10px;
+    border: 2px solid rgba(128, 128, 128, 0.163);
+    background-color: #f0f0f0;
+    padding: 1.4rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* background-color: red; */
+    gap: 10rem 2rem;
+}
+
+.request-details {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+    /* background-color: red; */
+}
+
+.request-details h3 {
+    margin-top: 0;
+}
+
+.request-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.approve-btn,
+.reject-btn {
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    margin-top: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.reject-btn {
+    background-color: #f44336;
+}
+
+.AddProp {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.addprop {
+    display: flex;
+    justify-content: center;
+}
+
+.addpropbutton {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1.2rem;
+}
+
+.addpropbutton:hover {
+    background-color: #2980b9;
+}
+
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #00000085;
+    border-radius: 20px;
+}

@@ -1,11 +1,8 @@
-import Nav from "../ui/Nav";
-
 function Rent() {
   return (
-    <>
-      <Nav />
-      <h1> THIS IS THE RENT PAGE </h1>
-    </>
-  )
+    <div>
+      <h1>Rent</h1>
+    </div>
+  );
 }
 export default Rent;
