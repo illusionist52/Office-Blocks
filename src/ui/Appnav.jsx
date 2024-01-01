@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import "../index.css"
-import "../pages/Homepage.css"
+import "../pages/homepage.css"
 import Logo from "./Logo";
 import Button from "./Button";
 import LinkButton from "./LinkButton";
