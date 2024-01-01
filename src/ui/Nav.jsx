@@ -1,6 +1,6 @@
 import { NavLink, Navigate, useNavigate } from "react-router-dom";
 import "../index.css"
-import "../pages/Homepage.css"
+import "../pages/homepage.css"
 import Logo from "./Logo";
 import Button from "./Button";
 import LinkButton from "./LinkButton";
@@ -8,12 +8,14 @@ import { BiSolidUser } from "react-icons/bi";
 import { useState } from "react";
 import toast from "react-hot-toast";
 
+
 function Nav() {
+
   let usd = JSON.parse(localStorage.getItem("token"))
   const [userData, setUserData] = useState(usd);
 
   const navigate = useNavigate();
-
+ 
   function Logout() {
     localStorage.removeItem("token");
     setUserData(usd);
@@ -24,6 +26,7 @@ function Nav() {
 
   return <nav className="nav">
     <Logo />
+
     <ul>
       <li>
         <NavLink to="/signup">Dashboards</NavLink>
