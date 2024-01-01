@@ -10,7 +10,6 @@ import PropertyTiles from "../ui/PropertyTiles";
 import Appnav from "./../ui/Appnav";
 import OwnerNav from "./../ui/OwnerNav";
 import { useNavigate } from "react-router-dom";
-import styles from "../ui/Searchbar.module.css";
 import Button from "../ui/Button";
 
 import { searchProp } from "../services/apiSearch";
